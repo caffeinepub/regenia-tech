@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Fonts ── */
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/assets/fonts/MonaSans.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Tokens ── */
+@layer base {
+  :root {
+    /* near-white base */
+    --background: 0.99 0 0;
+    --foreground: 0.12 0 0;
+
+    --card: 0.97 0 0;
+    --card-foreground: 0.12 0 0;
+
+    --popover: 0.99 0 0;
+    --popover-foreground: 0.12 0 0;
+
+    --primary: 0.12 0 0;
+    --primary-foreground: 0.99 0 0;
+
+    --secondary: 0.95 0 0;
+    --secondary-foreground: 0.12 0 0;
+
+    --muted: 0.94 0 0;
+    --muted-foreground: 0.45 0 0;
+
+    --accent: 0.94 0 0;
+    --accent-foreground: 0.12 0 0;
+
+    --destructive: 0.55 0.22 27;
+    --destructive-foreground: 0.99 0 0;
+
+    --border: 0.9 0 0;
+    --input: 0.9 0 0;
+    --ring: 0.12 0 0;
+
+    --radius: 0.75rem;
+
+    --chart-1: 0.6 0.15 250;
+    --chart-2: 0.65 0.13 160;
+    --chart-3: 0.7 0.12 80;
+    --chart-4: 0.55 0.18 300;
+    --chart-5: 0.6 0.16 30;
+
+    --sidebar: 0.97 0 0;
+    --sidebar-foreground: 0.12 0 0;
+    --sidebar-primary: 0.12 0 0;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.94 0 0;
+    --sidebar-accent-foreground: 0.12 0 0;
+    --sidebar-border: 0.9 0 0;
+    --sidebar-ring: 0.12 0 0;
+  }
+
+  .dark {
+    --background: 0.08 0 0;
+    --foreground: 0.97 0 0;
+
+    --card: 0.12 0 0;
+    --card-foreground: 0.97 0 0;
+
+    --popover: 0.1 0 0;
+    --popover-foreground: 0.97 0 0;
+
+    --primary: 0.97 0 0;
+    --primary-foreground: 0.08 0 0;
+
+    --secondary: 0.18 0 0;
+    --secondary-foreground: 0.97 0 0;
+
+    --muted: 0.18 0 0;
+    --muted-foreground: 0.6 0 0;
+
+    --accent: 0.18 0 0;
+    --accent-foreground: 0.97 0 0;
+
+    --destructive: 0.55 0.22 27;
+    --destructive-foreground: 0.97 0 0;
+
+    --border: 0.22 0 0;
+    --input: 0.22 0 0;
+    --ring: 0.7 0 0;
+
+    --sidebar: 0.1 0 0;
+    --sidebar-foreground: 0.97 0 0;
+    --sidebar-primary: 0.97 0 0;
+    --sidebar-primary-foreground: 0.08 0 0;
+    --sidebar-accent: 0.18 0 0;
+    --sidebar-accent-foreground: 0.97 0 0;
+    --sidebar-border: 0.22 0 0;
+    --sidebar-ring: 0.7 0 0;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+/* ── Custom Utilities ── */
+.text-gradient {
+  background: linear-gradient(135deg, oklch(0.97 0 0) 0%, oklch(0.7 0 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-dark {
+  background: linear-gradient(135deg, oklch(0.1 0 0) 0%, oklch(0.4 0 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-nav {
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background-color: oklch(0.08 0 0 / 0.85);
+  border-bottom: 1px solid oklch(1 0 0 / 0.08);
+}
